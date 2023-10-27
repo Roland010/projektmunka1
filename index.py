@@ -1,6 +1,7 @@
 import time
 import os
 import math
+import random
 
 def menu():
     print("(0) Kilépés a programból")
@@ -38,7 +39,27 @@ def pitagorasz():
     print("A háromszög átlója: ", eredmeny)
 
 
-'''def kopapirollo():'''
+def kopapirollo():
+
+    valasztas = ['kő', 'papír', 'olló']
+
+    felhasznalo = input("Kő, papír vagy olló? ")
+    gep = random.choice(valasztas)
+
+    print(f"Az ön tippe: {felhasznalo}")
+    print(f"A gép tippe: {gep}")
+
+    if felhasznalo == gep:
+        print("Döntetlen!")
+    elif (
+        (felhasznalo == 'kő' and gep == 'olló') or
+        (felhasznalo == 'papír' and gep == 'kő') or
+        (felhasznalo == 'olló' and gep == 'papír')
+    ):
+        print("Ön nyert!")
+    else:
+        print("A gép nyert!")
+
 
 
 '''def veletlenszam():'''
@@ -47,40 +68,43 @@ def pitagorasz():
 def easteregg():
       print("eszterédzs")
 
+
+
 valasztas = 0;
-menu()   #kiírom a menüt
+menu()
 valasztas = int(input("Válasszon egy lehetőséget: "))   #bekérem a felhasználó által választott menüpontot
 
 
 while valasztas <= 5 or valasztas >= 0 or valasztas == 20070531:   #megvizsgálom hogy elfogadható számot ír-e be a felhasználó
-    if int(valasztas) == 0:   #kilépés a programból
-          print("Viszlát!")
-          time.sleep(2)
-          os.system('cls')
-          exit()
 
-    elif int(valasztas) == 1:   #egyes menüpont kiválasztása
-            alapmuvelet()
+        if valasztas == 0:   #kilépés a programból
+            print("Viszlát!")
+            time.sleep(2)
+            os.system('cls')
+            exit()
 
-    elif int(valasztas) == 2:   #kettes menüpont kiválasztása
-            negyzet()
+        elif valasztas == 1:   #egyes menüpont kiválasztása
+                alapmuvelet()
 
-    elif int(valasztas) == 3:   #hármas menüpont kiválasztása
-            pitagorasz()
+        elif valasztas == 2:   #kettes menüpont kiválasztása
+                negyzet()
 
-    elif int(valasztas) == 4:   #négyes menüpont kiválasztása
-            alapmuvelet()
+        elif valasztas == 3:   #hármas menüpont kiválasztása
+                pitagorasz()
 
-    elif int(valasztas) == 5:   #ötös menüpont kiválasztása
-            alapmuvelet()
+        elif valasztas == 4:   #négyes menüpont kiválasztása
+                kopapirollo()
 
-    elif int(valasztas) == 20070531:   #easter egg aktiválása
-        jelszo = "szeretemapythont"
-        pwd = input("Kérem a jelszót: ")
-        if pwd == jelszo :   #jelszó lekérése
-            easteregg()
-        else:
-            print("A JELSZÓ HELYTELEN")
+        elif valasztas == 5:   #ötös menüpont kiválasztása
+                alapmuvelet()
+
+        elif valasztas == 20070531:   #easter egg aktiválása
+            jelszo = "szeretemapythont"
+            pwd = input("Kérem a jelszót: ")
+            if pwd == jelszo :   #jelszó lekérése
+                easteregg()
+            else:
+                print("A JELSZÓ HELYTELEN")
 
 else:
     input("Érvénytelen szám, kérem írjon másikat: ")
