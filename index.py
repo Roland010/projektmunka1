@@ -26,7 +26,6 @@ def alapmuvelet():
     print("")
 
 
-
 def negyzet():
     alapszam = int(input("Írja be a négyzetre emelendő számot: "))
     print("Az ön által választott szám négyzete: ", alapszam * alapszam)
@@ -61,7 +60,6 @@ def kopapirollo():
         print("A gép nyert!")
 
 
-
 def veletlenszam():
     random_szamok = [random.randint(-500, 500) for _ in range(10)]
     legkisebb_szam = min(random_szamok)
@@ -71,8 +69,27 @@ def veletlenszam():
 
 
 def easteregg():
-    print("eszterédzs")
-
+    print(".============================================================.")
+    print("|                                                            |")
+    print("|                        .::::::::::.                        |")
+    print("|                      .::``::::::::::.                      |")
+    print("|                      :::..:::::::::::                      |")
+    print("|                      ````````::::::::                      |")
+    print("|              .::::::::::::::::::::::: iiiiiii,             |")
+    print("|           .:::::::::::::::::::::::::: iiiiiiiii.           |")
+    print("|           ::::::::::::::::::::::::::: iiiiiiiiii           |")
+    print("|           ::::::::::::::::::::::::::: iiiiiiiiii           |")
+    print("|           :::::::::: ,,,,,,,,,,,,,,,,,iiiiiiiiii           |")
+    print("|           :::::::::: iiiiiiiiiiiiiiiiiiiiiiiiiii           |")
+    print("|           `::::::::: iiiiiiiiiiiiiiiiiiiiiiiiii`           |")
+    print("|              `:::::: iiiiiiiiiiiiiiiiiiiiiii`              |")
+    print("|                      iiiiiiii,,,,,,,,                      |")
+    print("|                      iiiiiiiiiii''iii                      |")
+    print("|                      `iiiiiiiiii..ii`                      |")
+    print("|                        `iiiiiiiiii`                        |")
+    print("|                                                            |")
+    print("'============================================================'")
+    
 
 
 menu()
@@ -108,6 +125,7 @@ while valasztas <= 5 or valasztas >= 0 or valasztas == 20070531:   #megvizsgálo
             pwd = input("Kérem a jelszót: ")
             if pwd == jelszo :   #jelszó lekérése
                 easteregg()
+                break
             else:
                 print("A JELSZÓ HELYTELEN")
 
