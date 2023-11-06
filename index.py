@@ -23,6 +23,7 @@ def alapmuvelet():
     print("Hanyadosuk: ", elsoszam / masodikszam)
     print("")
     print("********************************************************")
+    print("")
 
 
 
@@ -40,7 +41,6 @@ def pitagorasz():
 
 
 def kopapirollo():
-
     valasztas = ['kő', 'papír', 'olló']
 
     felhasznalo = input("Kő, papír vagy olló? ")
@@ -62,15 +62,19 @@ def kopapirollo():
 
 
 
-'''def veletlenszam():'''
+def veletlenszam():
+    random_szamok = [random.randint(-500, 500) for _ in range(10)]
+    legkisebb_szam = min(random_szamok)
+
+    print("Generált számok: ", random_szamok)
+    print("Legkisebb szám: ", legkisebb_szam)
 
 
 def easteregg():
-      print("eszterédzs")
+    print("eszterédzs")
 
 
 
-valasztas = 0;
 menu()
 valasztas = int(input("Válasszon egy lehetőséget: "))   #bekérem a felhasználó által választott menüpontot
 
@@ -96,7 +100,8 @@ while valasztas <= 5 or valasztas >= 0 or valasztas == 20070531:   #megvizsgálo
                 kopapirollo()
 
         elif valasztas == 5:   #ötös menüpont kiválasztása
-                alapmuvelet()
+                veletlenszam()
+                
 
         elif valasztas == 20070531:   #easter egg aktiválása
             jelszo = "szeretemapythont"
@@ -107,4 +112,4 @@ while valasztas <= 5 or valasztas >= 0 or valasztas == 20070531:   #megvizsgálo
                 print("A JELSZÓ HELYTELEN")
 
 else:
-    input("Érvénytelen szám, kérem írjon másikat: ")
+    int(input("Érvénytelen szám, kérem írjon másikat: "))
